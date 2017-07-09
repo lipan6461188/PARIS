@@ -45,6 +45,13 @@ bsub -q Z-ZQF \
     --minSupport 2 \
     --scoringMethod harmonic
 ```
+--intronAnnoFile is a file produced using scripts/parseBedFromGTF.py
+
+```
+scripts/parseBedFromGTF.py -g GRCh38.gtf -o GRCh38 -s gencode
+```
+It produced GRCh38.genomeCoor.bed and GRCh38.transCoor.bed. Then use GRCh38.genomeCoor.bed as the parameter of --intronAnnoFile 
+
 
 #### Example
 
