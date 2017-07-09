@@ -1,8 +1,8 @@
 # PARIS Analysis Pipeline
 
 #### Dependency:
-* seq library(pysam)
-* g++
+* pysam package
+* g++ (version >= 4.9)
 * bedtools
 
 #### Installation
@@ -51,6 +51,29 @@ bsub -q Z-ZQF \
 scripts/parseBedFromGTF.py -g GRCh38.gtf -o GRCh38 -s gencode
 ```
 It produced GRCh38.genomeCoor.bed and GRCh38.transCoor.bed. Then use GRCh38.genomeCoor.bed as the parameter of --intronAnnoFile 
+
+prefix.genomeCoor.bed looks like this:
+
+```
+chr1    29554   31097   +       MIR1302-2HG_ENSG00000243485.5   ENST00000473358.1       lincRNA 29554-30039,30564-30667,30976-31097
+chr1    30267   31109   +       MIR1302-2HG_ENSG00000243485.5   ENST00000469289.1       lincRNA 30267-30667,30976-31109
+chr1    30366   30503   +       MIR1302-2_ENSG00000284332.1     ENST00000607096.1       miRNA   30366-30503
+chr1    34554   36081   -       FAM138A_ENSG00000237613.2       ENST00000417324.1       lincRNA 35721-36081,35277-35481,34554-35174
+chr1    35245   36073   -       FAM138A_ENSG00000237613.2       ENST00000461467.1       lincRNA 35721-36073,35245-35481
+```
+
+prefix.transCoor.bed looks like this: 
+```
+ENST00000473358.1       MIR1302-2HG_ENSG00000243485.5   lincRNA 712     1-486,487-590,591-712
+ENST00000469289.1       MIR1302-2HG_ENSG00000243485.5   lincRNA 535     1-401,402-535
+ENST00000607096.1       MIR1302-2_ENSG00000284332.1     miRNA   138     1-138
+ENST00000417324.1       FAM138A_ENSG00000237613.2       lincRNA 1187    1-361,362-566,567-1187
+ENST00000461467.1       FAM138A_ENSG00000237613.2       lincRNA 590     1-353,354-590
+ENST00000606857.1       OR4G4P_ENSG00000268020.3        unprocessed_pseudogene  840     1-840
+ENST00000492842.1       OR4G11P_ENSG00000240361.1       unprocessed_pseudogene  940     1-940
+ENST00000335137.3       OR4F5_ENSG00000186092.4 protein_coding  918     1-918   916-918
+ENST00000466430.5       RP11-34P13.7_ENSG00000238009.6  lincRNA 2748    1-158,159-263,264-413,414-2748
+```
 
 
 #### Example
