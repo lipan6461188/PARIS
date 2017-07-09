@@ -8,9 +8,7 @@
 #### Installation
 
 ```bash
-cd Dir_To_Paris/c++/GenDuplexGroup/GenDuplexGroup
 make
-cd Dir_To_Paris
 python paris.py				# Run with c++ code(fast)
 python paris-old.py		# Run with python code(slow)
 ```

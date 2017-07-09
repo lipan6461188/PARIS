@@ -13,7 +13,7 @@ from lib.PrintSupportSam import *
 from lib.CalcScore import *
 from lib.PrintDuplexGroup import *
 
-DuplexGroupBin = os.path.dirname(sys.argv[0])+"/bin/paris"
+# DuplexGroupBin = "/".join(os.path.abspath(sys.argv[0]).split('/')[:-1])+"/bin/paris"
 
 Usage = """
 
@@ -88,7 +88,8 @@ def init():
     params = {
         "output": "DG", "tmpFileName": str(random.randint(10000,30000)), "removeRedundancy": False, "minOverhang": 15, \
         "localAlign": False, "preserveMultimap": False, "intronFlanking": 3, "minOverlap": 5, "multipleDG":False, \
-        "maxGap": 10, "maxDGOverhang": 30, "coverage": "pileup", "minSupport": 2, "scoringMethod": "harmonic"
+        "maxGap": 10, "maxDGOverhang": 30, "coverage": "pileup", "minSupport": 2, "scoringMethod": "harmonic", 
+        "ParisBin": "/".join(os.path.abspath(sys.argv[0]).split('/')[:-1])+"/bin/paris"
     }
     opts, args = getopt.getopt(sys.argv[1:], 'hi:j:s:o:', \
         ['genomeFile=', 'intronAnnoFile=', 'tmpFileName=', 'log=', 'error=', 'removeRedundancy=', 'minOverhang=', 'localAlign=', 'preserveMultimap=', 'intronFlanking=', 'minOverlap=', 'multipleDG=', 'maxGap=', 'maxDGOverhang=','coverage=', 'genomeSizeFile=', 'minSupport=', 'scoringMethod='])
@@ -237,7 +238,7 @@ def main():
     #       ==================3. DuplexGroup==================
     print >>GLOBAL.LOG, "="*20+StepTags[2]+"="*20
     print >>GLOBAL.ERR, "="*20+StepTags[2]+"="*20
-    gDuplexGroup(task_name=parameters['tmpFileName'], duplexBin=DuplexGroupBin, logFile=parameters['log'], errFile=parameters['error'], minOverlap=parameters['minOverlap'], multipleDG=parameters['multipleDG'], maxGap=parameters['maxGap'], maxTotal=parameters['maxDGOverhang'])
+    gDuplexGroup(task_name=parameters['tmpFileName'], duplexBin=parameters['ParisBin'], logFile=parameters['log'], errFile=parameters['error'], minOverlap=parameters['minOverlap'], multipleDG=parameters['multipleDG'], maxGap=parameters['maxGap'], maxTotal=parameters['maxDGOverhang'])
     #       ==================4. loadDuplexGroup==================
     print >>GLOBAL.LOG, "="*20+StepTags[3]+"="*20
     print >>GLOBAL.ERR, "="*20+StepTags[3]+"="*20
