@@ -16,18 +16,18 @@ Command:
  -o     output file prefix
  -s     <gencode/ncbi> data source
 
-# more options
+# more options [ Strongly Recommend Default Parameters ]
  --removeTransVersion <yes/no>
-            ENST00000488147.1 => ENST00000488147 (default: yes)
+            ENST00000488147.1 => ENST00000488147 (default: no)
  --removeGeneVersion <yes/no>
-            ENSG00000227232.5 => ENSG00000227232 (default: yes)
+            ENSG00000227232.5 => ENSG00000227232 (default: no)
  --removeScaffold <yes/no>
-            remove KI270734.1... (default: yes)
+            remove KI270734.1... (default: no)
 
 """ % (sys.argv[0], )
 
 def init():
-    params = { 'removeTransVersion': True, 'removeGeneVersion': True, 'removeScaffold': True }
+    params = { 'removeTransVersion': False, 'removeGeneVersion': False, 'removeScaffold': False }
     opts, args = getopt.getopt(sys.argv[1:], 'hg:o:s:', ['removeTransVersion=', 'removeGeneVersion=', 'removeScaffold='])
     for op, value in opts:
         if op == '-h':
