@@ -101,18 +101,18 @@ python DG2Frame.py \
 ```
 Produced 3 files: 
 
-1. `$ROOT/59_24/analysis/59_24.Frame`
+* `$ROOT/59_24/analysis/59_24.Frame`
 
-	```
+```
 #Group  lchr    lstrand lstart  lend    rchr    rstrand rstart  rend    support lcount  rcount  score
 7747163 KU501215.1      +       3408    3425    chr1    -       148038821       148038844       2       6177    15857   0.000303
 7747165 KU501215.1      +       3408    3436    chr1    -       172993707       172993722       2       6177    2       0.022036
 7747173 KU501215.1      +       3411    3428    chr1    -       34377046        34377063        2       6177    2       0.022036
 ```
 
-2. `$ROOT/59_24/analysis/59_24.gFrame`
+* `$ROOT/59_24/analysis/59_24.gFrame`
 
-	```
+```
 # From: /150T/zhangqf/tmp_lp/PARIS/tanglei/59_24/analysis/59_24.frame; Date: 2017-07-12 20:33:56.876354; Annotation: /Share/home/zhangqf8/lipan/DYNAMIC/GTF/Gencode/GRCh38.gtf
 #Group  lchr    lstrand lstart  lend    rchr    rstrand rstart  rend    support lcount  rcount  score   lgenes  rgenes
 7747163 KU501215.1      +       3408    3425    chr1    -       148038821       148038844       2       6177    15857   0.000303        NULL    chr1:148038822-148038844:ENSG00000206585.1:RNVU1-7:73-95
@@ -120,9 +120,9 @@ Produced 3 files:
 7747173 KU501215.1      +       3411    3428    chr1    -       34377046        34377063        2       6177    2       0.022036        NULL    NULL
 ```
 
-3. `$ROOT/59_24/analysis/59_24.tFrame`
+* `$ROOT/59_24/analysis/59_24.tFrame`
 
-	```
+```
 # From: /150T/zhangqf/tmp_lp/PARIS/tanglei/59_24/analysis/59_24.frame; Date: 2017-07-12 20:35:19.706766; Annotation: /Share/home/zhangqf8/lipan/DYNAMIC/GTF/Gencode/GRCh38.gtf
 #Group  lchr    lstrand lstart  lend    rchr    rstrand rstart  rend    support lcount  rcount  score   ltrans  rtrans
 7747163 KU501215.1      +       3408    3425    chr1    -       148038821       148038844       2       6177    15857   0.000303        NULL    chr1:148038822-148038844:ENST00000383858.1:73-95:RNVU1-7:snRNA:1-164:164
