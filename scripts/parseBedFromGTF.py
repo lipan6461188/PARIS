@@ -70,11 +70,11 @@ def main():
     if params['source'] == 'gencode':
         gtf = GENCODE_Genome.GENCODE_Genome_Class(params['input'])
         gtf.write_genomeCoor_bed(genomeCoorFileName, onlyChr=params['removeScaffold'], pureTransID=params['removeTransVersion'], pureGeneID=params['removeGeneVersion'])
-        NCBI_Genome.NCBI_Genome_Class.genomeCoorBed_To_transCoorBed(genomeCoorFileName, transCoorFileName)
+        #NCBI_Genome.NCBI_Genome_Class.genomeCoorBed_To_transCoorBed(genomeCoorFileName, transCoorFileName)
     elif params['source'] == 'ncbi':
         gff3 = NCBI_Genome.NCBI_Genome_Class(params['input'])
         gff3.write_genomeCoor_bed(genomeCoorFileName, onlyChr=params['removeScaffold'], pureTransID=params['removeTransVersion'])
-        NCBI_Genome.genomeCoorBed_To_transCoorBed(genomeCoorFileName, transCoorFileName)
+    NCBI_Genome.NCBI_Genome_Class.genomeCoorBed_To_transCoorBed(genomeCoorFileName, transCoorFileName)
 
 main()
 
