@@ -15,8 +15,8 @@ paris: TimeFunc.o Files.o environment.o DuplexGroup.o main.o removeCR
 	cd $(ROOT) && \
 	$(CC) -I. main.o TimeFunc.o Files.o environment.o DuplexGroup.o -o paris && \
 	rm *.o && \
-	mv paris ../../../bin && \
-	mv removeCR ../../../bin
+	mv paris ../../../bin/ && \
+	mv removeCR ../../../bin/
 
 test:
 	cd c++/GenDuplexGroup/GenDuplexGroup/ && echo "hello" `pwd`
