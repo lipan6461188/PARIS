@@ -14,7 +14,8 @@ all: paris
 paris: TimeFunc.o Files.o environment.o DuplexGroup.o main.o removeCR
 	cd $(ROOT) && \
 	$(CC) -I. main.o TimeFunc.o Files.o environment.o DuplexGroup.o -o paris && \
-	rm *.o && \
+	rm *.o
+	cd $(ROOT) && \
 	mv paris ../../../bin/ && \
 	mv removeCR ../../../bin/
 
