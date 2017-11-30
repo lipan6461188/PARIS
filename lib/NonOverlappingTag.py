@@ -59,9 +59,9 @@ def uniqBed(inputBed, outputBed):
         else:
             tag += ";" + data[3]
             count += int(data[4])
-        if bedPos:
-            print >>OUT, "\t".join([bedPos, tag, `count`, bedStrand])
         line = IN.readline()
+    if bedPos:
+        print >>OUT, "\t".join([bedPos, tag, `count`, bedStrand])
     IN.close()
     OUT.close()
 
